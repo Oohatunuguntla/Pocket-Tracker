@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "6063419b44a54fe06088feaf"
+  },
+  "Rewardcoins": 6,
+  "name": "sravanti",
+  "email": "sravanti.kanchi@gmail.com",
+  "password": "$2a$10$UiFCBcvXM8LBphiPvxG9OOLqs5iTRtbfdHFrloI3629bObNOMm3Wi",
+  "date": {
+    "$date": "2021-03-30T15:19:55.013Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606359d7b2254fcd648adb88"
+  },
+  "Rewardcoins": 0,
+  "name": "sravanti",
+  "email": "kavya@fghjkl.com",
+  "password": "$2a$10$XtXxXWQmokCmqcLEAuUU8eMpO2y7FMQycZ7HBz6y2hzCvxcQMnWNi",
+  "date": {
+    "$date": "2021-03-30T17:03:19.408Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6063b2ee23b0cc18d03c59cc"
+  },
+  "Rewardcoins": 0,
+  "name": "sravya",
+  "email": "sravya.sdfghj@gmail.com",
+  "password": "$2a$10$a/eDLw8Lx8DLnC40ip9X8um6/5x8vATHmqevDb8ySI36pJQEpaaQC",
+  "date": {
+    "$date": "2021-03-30T23:23:26.938Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "610f6ea63ae2b756cd50ca1f"
+  },
+  "Rewardcoins": 0,
+  "name": "SRAVANTI1",
+  "email": "sravanti.kanchi1@gmail.com",
+  "password": "$2a$10$P81NSi6uhHT.pYzPwRDhJu67g9YEzj2wpNYc6JWLSBRkiCksYcW/a",
+  "date": {
+    "$date": "2021-08-08T05:41:58.843Z"
+  },
+  "__v": 0
+}]

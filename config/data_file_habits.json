@@ -1,0 +1,189 @@
+[{
+  "_id": {
+    "$oid": "606352341d46f5d7182cca41"
+  },
+  "days": {
+    "one": null,
+    "two": "yes",
+    "three": "yes",
+    "four": "yes",
+    "five": null,
+    "six": null,
+    "seven": null
+  },
+  "streak": 3,
+  "StreaksPerWeek": 3,
+  "userId": "6063419b44a54fe06088feaf",
+  "habit": "Book Reading",
+  "end": "2021-04-11",
+  "description": "ghjkl;",
+  "date": "Tue Mar 30 2021 22:00:44 GMT+0530 (India Standard Time)",
+  "startDate": "2021-3-30",
+  "time": "22:05",
+  "TrackingStatus": [
+    {
+      "Date": "2021-3-30",
+      "status": "yes",
+      "_id": {
+        "$oid": "606352371d46f5d7182cca42"
+      }
+    },
+    {
+      "Date": "2021-3-31",
+      "status": "yes",
+      "_id": {
+        "$oid": "6063c4244eb0323e00448eab"
+      }
+    },
+    {
+      "Date": "2021-4-1",
+      "status": "yes",
+      "_id": {
+        "$oid": "6065c676cd09200968a22062"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606359f9b2254fcd648adb89"
+  },
+  "days": {
+    "one": "yes",
+    "two": "yes",
+    "three": null,
+    "four": null,
+    "five": "yes",
+    "six": null,
+    "seven": null
+  },
+  "streak": 0,
+  "StreaksPerWeek": 3,
+  "userId": "606359d7b2254fcd648adb88",
+  "habit": "Running",
+  "end": "2021-04-10",
+  "description": "Fitness by 25 kgs",
+  "date": "Tue Mar 30 2021 22:33:53 GMT+0530 (India Standard Time)",
+  "startDate": "2021-3-30",
+  "time": "22:38",
+  "TrackingStatus": [
+    {
+      "Date": "2021-3-30",
+      "status": "no",
+      "_id": {
+        "$oid": "606359fbb2254fcd648adb8a"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6063b21fe73cd04d1c47e955"
+  },
+  "days": {
+    "one": null,
+    "two": null,
+    "three": "yes",
+    "four": null,
+    "five": "yes",
+    "six": null,
+    "seven": null
+  },
+  "streak": 1,
+  "StreaksPerWeek": 2,
+  "userId": "606359d7b2254fcd648adb88",
+  "habit": "Book Reading",
+  "end": "2021-04-11",
+  "description": "bbbbbbbbbbbbbbbbbbbbbb",
+  "date": "Wed Mar 31 2021 04:49:59 GMT+0530 (India Standard Time)",
+  "startDate": "2021-3-30",
+  "time": "09:54",
+  "TrackingStatus": [
+    {
+      "Date": "2021-3-30",
+      "status": "yes",
+      "_id": {
+        "$oid": "6063b25323b0cc18d03c5988"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6063ba64d7619f34c4e6c010"
+  },
+  "days": {
+    "one": null,
+    "two": "yes",
+    "three": "yes",
+    "four": "yes",
+    "five": "yes",
+    "six": null,
+    "seven": null
+  },
+  "streak": 1,
+  "StreaksPerWeek": 4,
+  "userId": "6063419b44a54fe06088feaf",
+  "habit": "Running",
+  "end": "2021-04-11",
+  "description": "bbbbbbbbbbbbbbbbbbbbbb",
+  "date": "Wed Mar 31 2021 05:25:16 GMT+0530 (India Standard Time)",
+  "startDate": "2021-3-30",
+  "time": "05:30",
+  "TrackingStatus": [
+    {
+      "Date": "2021-3-30",
+      "status": "no",
+      "_id": {
+        "$oid": "6063ba66d7619f34c4e6c011"
+      }
+    },
+    {
+      "Date": "2021-3-31",
+      "status": "yes",
+      "_id": {
+        "$oid": "6063c4244eb0323e00448eac"
+      }
+    },
+    {
+      "Date": "2021-4-1",
+      "status": "none",
+      "_id": {
+        "$oid": "6065c676cd09200968a22063"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "610f6f393ae2b756cd50ca20"
+  },
+  "days": {
+    "one": "yes",
+    "two": "yes",
+    "three": "yes",
+    "four": "yes",
+    "five": "yes",
+    "six": "yes",
+    "seven": "yes"
+  },
+  "streak": 0,
+  "StreaksPerWeek": 7,
+  "userId": "610f6ea63ae2b756cd50ca1f",
+  "habit": "Running",
+  "end": "2021-08-20",
+  "description": "hjkvbnj",
+  "date": "Sun Aug 08 2021 11:14:25 GMT+0530 (India Standard Time)",
+  "startDate": "2021-8-8",
+  "time": "12:30",
+  "TrackingStatus": [
+    {
+      "Date": "2021-8-8",
+      "status": "none",
+      "_id": {
+        "$oid": "610f6fec3ae2b756cd50ca21"
+      }
+    }
+  ],
+  "__v": 0
+}]
