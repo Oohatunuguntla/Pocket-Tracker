@@ -14,10 +14,11 @@ router.get('/register', forwardAuthenticated, (req, res) => res.render('register
 
 // Register
 router.post('/register', (req, res) => {
-  const { name, email, password, password2 } = req.body;
+  console.log(req.body)
+  const { name, email, password, password2, isparent } = req.body;
   let errors = [];
 
-  if (!name || !email || !password || !password2) {
+  if (!name || !email || !password || !password2 || !isparent) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
@@ -35,7 +36,8 @@ router.post('/register', (req, res) => {
       name,
       email,
       password,
-      password2
+      password2,
+      isparent
     });
   } else {
     User.findOne({ email: email }).then(user => {
@@ -46,13 +48,15 @@ router.post('/register', (req, res) => {
           name,
           email,
           password,
-          password2
+          password2,
+          isparent
         });
       } else {
         const newUser = new User({
           name,
           email,
-          password
+          password,
+          isparent
         });
 
         bcrypt.genSalt(10, (err, salt) => {

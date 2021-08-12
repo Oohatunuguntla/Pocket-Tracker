@@ -17,10 +17,16 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  Rewardcoins:{
+  money:{
     type: Number,
     default:0
+  },
+  isparent:{
+  type: String,
+  required:true
   }
+
+
 });
 
 const User = mongoose.model('User', UserSchema);

@@ -10,7 +10,7 @@ module.exports.home = function (req, res) {
 
 
 
-
+    if (req.user.isparent=="Yes"){
 
     Habit.find({ userId: req.user._id }, function (err, habits) {
 
@@ -23,12 +23,7 @@ module.exports.home = function (req, res) {
         var newdate = year + "-" + month + "-" + day;
 
         let curr = new Date
-        let week = []
-        for (let i = 1; i <= 7; i++) {
-            let first = curr.getDate() - curr.getDay() + i
-            let day = new Date(curr.setDate(first)).toISOString().slice(0, 10)
-            week.push(day)
-        }
+
 
         if (err) {
             console.log('Error in fetching the habits');
@@ -37,12 +32,38 @@ module.exports.home = function (req, res) {
         return res.render('home', {
             title: "HabitTracker",
             habit_list: habits,
-            week_list: week,
+            user: req.user,
+            today:newdate
+        });
+    })
+}
+else{
+    Habit.find({ childId: req.user.name }, function (err, habits) {
+
+
+
+        var dateObj = new Date();
+        var month = dateObj.getUTCMonth() + 1; //months from 1-12
+        var day = dateObj.getUTCDate();
+        var year = dateObj.getUTCFullYear();
+        var newdate = year + "-" + month + "-" + day;
+
+        let curr = new Date
+
+
+        if (err) {
+            console.log('Error in fetching the habits');
+            return;
+        }
+        return res.render('home', {
+            title: "HabitTracker",
+            habit_list: habits,
             user: req.user,
             today:newdate
         });
     })
 
+}
 }
 // controller to create a habit
 module.exports.createHabit = function (req, res) {
@@ -50,42 +71,43 @@ module.exports.createHabit = function (req, res) {
 
 
     console.log(req.body)
-    let days = {
-        one: req.body.day1,
-        two: req.body.day2,
-        three: req.body.day3,
-        four: req.body.day4,
-        five: req.body.day5,
-        six: req.body.day6,
-        seven: req.body.day7,
-    }
-
-    var TotalStreaks=0;
-
-    if(days.one=="yes"){
-        TotalStreaks+=1;
-    }
-    if(days.two=="yes"){
-        TotalStreaks+=1;
-    }
-    if(days.three=="yes"){
-        TotalStreaks+=1;
-    }
-    if(days.four=="yes"){
-        TotalStreaks+=1;
-    }
-    if(days.five=="yes"){
-        TotalStreaks+=1;
-    }
-    if(days.six=="yes"){
-        TotalStreaks+=1;
-    }
-    if(days.seven=="yes"){
-        TotalStreaks+=1;
-    }
 
 
     let errors = [];
+    User.findOne({ name: req.body.childId }).then(user => {
+
+        var dateObj = new Date();
+        var month = dateObj.getUTCMonth() + 1; //months from 1-12
+        var day = dateObj.getUTCDate();
+        var year = dateObj.getUTCFullYear();
+        var newdate = year + "-" + month + "-" + day;
+        if(user){
+        if (user.isparent =="Yes") {
+                errors.push({ msg: 'This user has been registered as parent.' });
+                //return res.redirect('back');
+                return res.render('home', {
+                  errors,
+                  habit_list: [],
+                  user: req.user,
+                  today:newdate
+                });
+            }
+           else{
+           user.money=user.money+req.body.money
+           user.save()
+           }
+           }
+        else{
+        errors.push({ msg: 'No such child exist.' });
+        return res.redirect('back');
+                         return res.render('home', {
+                          errors,
+                          habit_list: [],
+                          user: req.user,
+                          today:newdate
+                        });
+        }
+           })
     //if startDate is not selected by default it is this day
     var dateObj = new Date();
     var month = dateObj.getUTCMonth() + 1; //months from 1-12
@@ -99,18 +121,16 @@ module.exports.createHabit = function (req, res) {
     // var GoalDate = req.body.end;
     Habit.create({
         userId: req.user._id,
-        habit: req.body.habit,
+        childId: req.body.childId,
         end: req.body.end,
         description: req.body.description,
-        date: Date(),
+        //date: Date(),
         startDate: newdate,
-        time: req.body.time,
-        days: days,
-        StreaksPerWeek: TotalStreaks
+        money: req.body.money
 
     }, function (err, newHabit) {
         if (err) {
-            console.log('Error in creating habit', err);
+            console.log('Error in adding money', err);
             return;
         }
 
@@ -127,7 +147,7 @@ module.exports.deleteHabit = function (req, res) {
     let id = req.query.id;
     Habit.findByIdAndDelete(id, function (err) {
         if (err) {
-            console.log("Error in deleting Habit");
+            console.log("Error in deleting item");
             return;
         }
         return res.redirect('back');
